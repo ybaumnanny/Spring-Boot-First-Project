@@ -1,9 +1,6 @@
 package com.example.BridgeLabz;
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.BridgeLabz.UserDto.UserDTO;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -22,8 +19,9 @@ public class HelloController {
 public String sayHelloWithPathVariable(@PathVariable String name) {
     return "Hello " + name + " from BridgeLabz";
 }
-
-
-
-
+// UC4-RestCall_To_Show_MarkTaylor
+@PostMapping("/post")
+public String sayHello(@RequestBody UserDTO user) {
+    return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+}
 }
