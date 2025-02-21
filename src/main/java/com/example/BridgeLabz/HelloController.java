@@ -1,5 +1,6 @@
 package com.example.BridgeLabz;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,12 @@ public class HelloController {
     public String greetUser(@RequestParam String name){
         return "Hello " + name + " From BridgeLabz";
 }
+//    UC3-RestCall_To_BridegLabz
+@RequestMapping("hello/param/{name}")
+public String sayHelloWithPathVariable(@PathVariable String name) {
+    return "Hello " + name + " from BridgeLabz";
+}
+
 
 
 
