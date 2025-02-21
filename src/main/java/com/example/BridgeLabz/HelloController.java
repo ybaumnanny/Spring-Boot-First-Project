@@ -19,9 +19,14 @@ public class HelloController {
 public String sayHelloWithPathVariable(@PathVariable String name) {
     return "Hello " + name + " from BridgeLabz";
 }
-// UC4-RestCall_To_Show_MarkTaylor
+//    UC4-RestCall_To_Show_MarkTaylor
 @PostMapping("/post")
 public String sayHello(@RequestBody UserDTO user) {
     return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
 }
+//    UC5-RestCall_ToShow_PutRequest
+    @PutMapping("/put/{firstName}")
+    public String modifyHello(@PathVariable("firstName") String firstName, @RequestParam("lastName") String lastName){
+        return "Hello" + firstName + " " + lastName + "fromBridgelabz";
+    }
 }
